@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karte Zufall</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f0f0f0;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #card {
+      margin-top: 50px;
+      font-size: 40px;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <button id="karteBtn">Karte</button>
+  <div id="card">?</div>
+
+  <script>
+    const suits = ["König", "Herz", "Pik", "Karo", "Kreuz"];
+    const button = document.getElementById("karteBtn");
+    const cardDisplay = document.getElementById("card");
+
+    button.addEventListener("click", () => {
+      const randomIndex = Math.floor(Math.random() * suits.length);
+      const randomCard = suits[randomIndex];
+      cardDisplay.textContent = randomCard;
+    });
+  </script>
+</body>
+</html>
